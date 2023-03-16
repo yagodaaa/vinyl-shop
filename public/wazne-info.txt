@@ -1,0 +1,13 @@
+// 16.03.2023 Mateusz
+
+Pamiętajcie dorzucić sobie paczki ze styled components i mui
+npm i styled-components
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+
+Pododawałem kolejne foldery i pliczki dotyczące stylowania ( styled > footer, header, login, mobile-chat, register) i dodałem im tylko importy żeby nie krzyczały że są puste.
+
+Pomyślałem, że spoko pomysłem byłoby wrzucenie takiego większego bara z kilkoma nowościami, promocjami etc. zaraz pod headerem a jeszcze przed kafelkami z produktami. Wydaje mi się, że może wyglądać spoko. Oczywiście nie musi być jakiś ogromny. Ważne żeby był czytelny i informował o ogólnikach.
+
+Dodałem app bara do naszej aplikacji. Lekko go zmodyfikowałem: dodałem search bara, dodałem ikonę koszyka(Shopping Cart w kodzie), zmieniłem nazwę, kolor, dodałem ikonę vinyla i lekko zmodyfikowałem układ
+Nie dodałem jeszcze żadnej mechaniki :D
