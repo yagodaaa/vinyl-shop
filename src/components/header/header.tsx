@@ -21,22 +21,22 @@ import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 
 export interface Page {
-    id: string,
-    path: string,
-    label: string
+  id: string,
+  path: string,
+  label: string
 }
 
-const pages: Page [] = [
-    {
-        id: '1',
-        path: 'product-list',
-        label: 'Lista produktów'
-    },
-    {
-        id: '2',
-        path: 'sell',
-        label: 'Sprzedaj płytę'
-    },
+const pages: Page[] = [
+  {
+    id: '1',
+    path: 'product-list',
+    label: 'Lista produktów'
+  },
+  {
+    id: '2',
+    path: 'sell-form-view',
+    label: 'Sprzedaj płytę'
+  },
 ]
 
 const settingNotLoggedUser = ["Login"]
@@ -49,8 +49,8 @@ function ResponsiveAppBar() {
   const [anchorElShoppingCart, setAnchorElShoppingCart] = React.useState<void>(); // Dodane przeze mnie na wzór poprzednich
 
   function handleOpenNavMenu(event: React.MouseEvent<HTMLElement>) {
-        setAnchorElNav(event.currentTarget);
-    }
+    setAnchorElNav(event.currentTarget);
+  }
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -69,7 +69,7 @@ function ResponsiveAppBar() {
 
   // Dodałem zmienną openShoppingCart, która ma reagować na kliknięcie ale to jest mocno robocza opcja. Nie do końca wiem jak to jeszcze zrobić ale dodałem żeby po prostu istniała bez mechaniki jeszcze
 
-  const Search = styled('div')(({theme}) => ({
+  const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0),
@@ -99,10 +99,10 @@ function ResponsiveAppBar() {
 
   const ShoppingCartIconOnAppBar = (
     <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-    <Badge badgeContent={4} color="error">
-      <ShoppingCartIcon />
-    </Badge>
-  </IconButton>
+      <Badge badgeContent={4} color="error">
+        <ShoppingCartIcon />
+      </Badge>
+    </IconButton>
   )
 
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -115,9 +115,9 @@ function ResponsiveAppBar() {
       width: '100%',
       // musiałem przerzucić backgoundColor: alpha tutaj z const Search bo jak wrzuciłem do boxa z listą produktów i sprzedaj płytę to był wypełniony cały app bar pionowo kolorem wyszukiwarki i słabo to wyglądało
       backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
+      '&:hover': {
+        backgroundColor: alpha(theme.palette.common.white, 0.25),
+      },
       [theme.breakpoints.up('md')]: {
         width: '30ch',
       },
@@ -126,7 +126,7 @@ function ResponsiveAppBar() {
 
   return (
     // Zmieniłem kolor app bara na czarny przez inline style={{backgroundColor}}, oczywiście info ze stackoverflow xd
-    <AppBar position="static" style={{backgroundColor: 'black'}}>
+    <AppBar position="static" style={{ backgroundColor: 'black' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AlbumIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -215,24 +215,24 @@ function ResponsiveAppBar() {
               </Button>
             ))}
             <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Wyszukaj"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Wyszukaj"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search>
           </Box>
           {/* // Tutaj wrzuciłem wyszukiwarkę do boxa razem z naszymi "Lista produktów" i "Sprzedaj płytę", żeby było przyklejone obok tych kategorii */}
-          
+
           <Box sx={{ flexGrow: 1 }} />
           <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <ShoppingCartIcon />
-              </Badge>
-            </IconButton>
-            {/* Dodałem ikonę koszyka z notyfikacjami ale jeszcze nie do końca ogarnąłem jak je uzależnić od ilości produktów w koszyku. To kwestia poszperania i znalezienia gdzieś w odmętach stack overflow xd */}
+            <Badge badgeContent={4} color="error">
+              <ShoppingCartIcon />
+            </Badge>
+          </IconButton>
+          {/* Dodałem ikonę koszyka z notyfikacjami ale jeszcze nie do końca ogarnąłem jak je uzależnić od ilości produktów w koszyku. To kwestia poszperania i znalezienia gdzieś w odmętach stack overflow xd */}
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

@@ -8,16 +8,18 @@ import MainView from "./views/main/main";
 import NotFoundView from "./views/not-found/not-found";
 import ProductListView from "./views/product-list/product-list";
 import SellView from "./views/sell/sell";
+import SellForm from "./components/sell-form/sell-form"
 import SingleProductView from "./views/single-product/single-product";
+
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
+          <Route path={"sell-form-view"} element={<SellView />} />
           <Route element={<MainView />}>
             <Route index element={<HomePageView />} />
-            <Route path={"SellFormView"} element={<SellView />} />
             <Route path={"BasketView"} element={<BasketView />} />
             <Route path={"LoginRegisterView"} element={<LoginRegisterView />} />
             <Route path={"ProductListView"} element={<ProductListView />} />
