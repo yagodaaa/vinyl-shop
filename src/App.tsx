@@ -11,6 +11,28 @@ import SellView from "./views/sell/sell";
 import SellForm from "./components/sell-form/sell-form"
 import SingleProductView from "./views/single-product/single-product";
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDdhCK24n-ExnYD-_xncrtIbC1x543-htA",
+  authDomain: "vvinylshop.firebaseapp.com",
+  projectId: "vvinylshop",
+  storageBucket: "vvinylshop.appspot.com",
+  messagingSenderId: "253415312132",
+  appId: "1:253415312132:web:09872ed8cacd9888b65e51",
+  measurementId: "G-4BG6H327MV"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 
 function App() {
   return (
