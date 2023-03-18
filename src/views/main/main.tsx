@@ -1,19 +1,21 @@
 import { Container } from "@mui/material"
 import { Outlet } from "react-router-dom"
-import Bar from "../../components/bar/bar"
+
 import Footer from "../../components/footer/footer"
 import Header from "../../components/header/header"
 import MobileChat from "../../components/mobile-chat/mobile-chat"
+import { MainPageStyled } from "../../styled/main/main"
 
 const MainView: React.FC = () => {
     return <>
+    <MainPageStyled>
             <Header />
-            <Bar />
-            <Container>
+            <Container style={{ padding: 0}}>
                 <Outlet />
             </Container>
             <MobileChat />
             <Footer />
+    </MainPageStyled>
         </>
 }
 

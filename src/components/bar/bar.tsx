@@ -1,5 +1,6 @@
-const Bar: React.FC = () => {
-    return <p>Bar</p>
-}
+import { BarStyled } from "../../styled/bar/bar"
 
+const Bar: React.FC = () => {
+    return <BarStyled>Przykładowy Bar</BarStyled>
+}
 export default Bar

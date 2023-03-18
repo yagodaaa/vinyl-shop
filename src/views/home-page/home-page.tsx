@@ -1,6 +1,20 @@
+import Bar from "../../components/bar/bar"
+import RecordMiniature from "../../components/record-miniature/record-miniature"
+import { HomePageStyled } from "../../styled/home-page/home-page"
+
 const HomePageView: React.FC = () => {
     return <>
-    HomePage
+    <Bar />
+    <HomePageStyled>
+        <RecordMiniature/>
+        <RecordMiniature/>
+        <RecordMiniature/>
+        <RecordMiniature/>
+        <RecordMiniature/>
+        <RecordMiniature/>
+        <RecordMiniature/>
+        <RecordMiniature/>
+    </HomePageStyled>
     </>
 }
 

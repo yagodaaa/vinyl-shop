@@ -39,11 +39,11 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path={"sell-form-view"} element={<SellView />} />
           <Route element={<MainView />}>
             <Route index element={<HomePageView />} />
             <Route path={"BasketView"} element={<BasketView />} />
             <Route path={"LoginRegisterView"} element={<LoginRegisterView />} />
+            <Route path={"sell-form-view"} element={<SellView />} />
             <Route path={"ProductListView"} element={<ProductListView />} />
             <Route path={":id"} element={<SingleProductView />}></Route>
             <Route path={"*"} element={<NotFoundView />} />
