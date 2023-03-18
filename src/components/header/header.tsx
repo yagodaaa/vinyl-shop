@@ -206,13 +206,14 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page.id}
+              <Link style={{textDecoration: 'none'}} to={page.path}>
+                <Button
+                key={page.path}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page.label}
-              </Button>
+                >{page.label}
+                </Button>
+              </Link>
             ))}
             <Search>
               <SearchIconWrapper>
