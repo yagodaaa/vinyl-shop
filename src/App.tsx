@@ -1,57 +1,39 @@
-import React from "react";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
-import BasketView from "./views/basket/basket";
-import HomePageView from "./views/home-page/home-page";
-import LoginRegisterView from "./views/login-register/login-register";
-import MainView from "./views/main/main";
-import NotFoundView from "./views/not-found/not-found";
-import ProductListView from "./views/product-list/product-list";
-import SellView from "./views/sell/sell";
-import SellForm from "./components/sell-form/sell-form"
-import SingleProductView from "./views/single-product/single-product";
+import BasketView from "./views/basket/basket-view";
+import HomePageView from "./views/home-page/home-page-view";
+import LoginRegisterView from "./views/login-register/login-register-view";
+import NotFoundView from "./views/not-found/not-found-view";
+import ProductListView from "./views/product-list/product-list-view";
+import SellView from "./views/sell/sell-view";
+import SingleProductView from "./views/product-fullinfo-view/product-fullinfo-view";
+import './App.scss';
+import heroImage from "./views/home-page/main.jpg"
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDdhCK24n-ExnYD-_xncrtIbC1x543-htA",
-  authDomain: "vvinylshop.firebaseapp.com",
-  projectId: "vvinylshop",
-  storageBucket: "vvinylshop.appspot.com",
-  messagingSenderId: "253415312132",
-  appId: "1:253415312132:web:09872ed8cacd9888b65e51",
-  measurementId: "G-4BG6H327MV"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
+import ResponsiveAppBar from "./components/header/header";
+import MobileChat from "./components/mobile-chat/mobile-chat";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<MainView />}>
-            <Route index element={<HomePageView />} />
-            <Route path={"BasketView"} element={<BasketView />} />
-            <Route path={"LoginRegisterView"} element={<LoginRegisterView />} />
-            <Route path={"sell-form-view"} element={<SellView />} />
-            <Route path={"ProductListView"} element={<ProductListView />} />
-            <Route path={":id"} element={<SingleProductView />}></Route>
-            <Route path={"*"} element={<NotFoundView />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+	<div className="App">
+	  <BrowserRouter>
+	  <ResponsiveAppBar />
+		<Routes>
+			<Route index element={<HomePageView />} />
+			<Route path={"/"} element={<HomePageView/>} />
+			<Route path={"basket"} element={<BasketView />} />
+			<Route path={"LoginRegisterView"} element={<LoginRegisterView />} />
+			<Route path={"sell-form-view"} element={<SellView />} />
+			<Route path={"ProductListView"} element={<ProductListView />} />
+			<Route path={":id"} element={<SingleProductView />}/>
+			<Route path={"*"} element={<NotFoundView />} />
+		</Routes>
+	  <img className="hero-image" src={heroImage} alt="heroImage"/>
+		<MobileChat />
+		<Footer />
+	  </BrowserRouter>
+	</div>
   );
 }
-
 export default App;

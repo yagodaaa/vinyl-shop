@@ -1,0 +1,26 @@
+.home-page {
+    scale: 40%;
+    text-align: center;
+    display: grid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+.vinyl-shop {
+    text-decoration: none;
+}
+.empty {
+    position: sticky;
+    width: 100%;
+    display: block;
+    opacity: 0;
+}
