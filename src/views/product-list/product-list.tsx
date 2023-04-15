@@ -1,6 +1,7 @@
+import { ProductsListComponent } from '../../components/product-list/product-list';
 const ProductListView: React.FC = () => {
     return <>
-ProductListView
+        <ProductsListComponent productList={[]}></ProductsListComponent>
     </>
 }
 

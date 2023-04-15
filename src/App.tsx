@@ -10,10 +10,11 @@ import ProductListView from "./views/product-list/product-list";
 import SellView from "./views/sell/sell";
 import SellForm from "./components/sell-form/sell-form"
 import SingleProductView from "./views/single-product/single-product";
+import { singleProduct } from '../src/components/entity/singleProduct'
 
 //FIREBASE
 import { initializeApp } from "firebase/app";
-import { config } from "./config/config"; 
+import { config } from "./config/config";
 import { getFirestore } from "firebase/firestore"
 import { collection, query, getDocs } from "firebase/firestore";
 
@@ -31,22 +32,32 @@ function App() {
             <Route index element={<HomePageView />} />
             <Route path={"BasketView"} element={<BasketView />} />
             <Route path={"LoginRegisterView"} element={<LoginRegisterView />} />
-            <Route path={"ProductListView"} element={<ProductListView />} />
+            <Route path={"ProductListView"} element={< ProductListView />} />
             <Route path={":id"} element={<SingleProductView />}></Route>
             <Route path={"*"} element={<NotFoundView />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </div>
+
   );
 }
 
-const generateAllRecordsView = async () => {
+export const generateAllRecordsView = async () => {
   const queryAllRecords = query(collection(database, "records"));
   const allRecords = await getDocs(queryAllRecords);
   console.log(allRecords)
+  const tableOfRecords: any = [];
+  allRecords.forEach(record => {
+    tableOfRecords.push({
+      id: record.id,
+      ...record.data()
+    })
+  })
+  console.log(tableOfRecords);
+  return tableOfRecords;
 }
 
-generateAllRecordsView()
 
+generateAllRecordsView()
 export default App;
