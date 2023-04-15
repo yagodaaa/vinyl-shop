@@ -1,12 +1,9 @@
 import { useParams } from "react-router-dom";
 import { DatabaseRecord } from "../../components/record-miniature/record-miniature"
-import { DocumentData, QuerySnapshot, collection, getFirestore, onSnapshot } from "firebase/firestore";
+import { DocumentData, QuerySnapshot, collection, onSnapshot } from "firebase/firestore";
 import React from "react";
-import { initializeApp } from "firebase/app";
-import { config } from "../../config/config";
 
-const app = initializeApp(config.firebaseConfig);
-const database = getFirestore(app);
+import { database } from "../../App";
 
 export interface SingleRecordIdProps {
     id: string

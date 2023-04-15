@@ -1,15 +1,11 @@
-import { initializeApp } from "firebase/app"; 
 import { DocumentData, getFirestore, QuerySnapshot } from "firebase/firestore"
 import { collection } from "firebase/firestore";
-import { config } from "../../config/config";
 import React from 'react';
 import { onSnapshot } from "firebase/firestore";
 import "./record-miniature.scss"
 import { Link } from "react-router-dom";
 
-
-const app = initializeApp(config.firebaseConfig);
-const database = getFirestore(app);
+import { database, app } from "../../App";
 
 export interface DatabaseRecord {
 	artist: string;
