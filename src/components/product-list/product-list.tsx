@@ -1,8 +1,8 @@
 import { singleProduct } from '../entity/singleProduct';
-import { SingleProductComponent } from '../single-product/single-product';
+import { SingleProductComponent } from '../single-product-in-list/single-product-in-list';
 import { generateAllRecordsView } from '../../App';
 import { useState, useEffect } from 'react'
-import { SingleProductProps } from '../single-product/single-product'
+import { SingleProductProps } from '../single-product-in-list/single-product-in-list'
 
 interface ProductsListComponentProps {
     productList: SingleProductProps[];

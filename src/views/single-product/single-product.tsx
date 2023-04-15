@@ -1,4 +1,4 @@
-import { SingleProductComponent } from '../../components/single-product/single-product';
+import { SingleProductComponent } from '../../components/single-product-in-list/single-product-in-list';
 
 const SingleProductView: React.FC = () => {
     return <>
