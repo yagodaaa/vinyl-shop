@@ -5,7 +5,7 @@ import { onSnapshot } from "firebase/firestore";
 import "./record-miniature.scss"
 import { Link } from "react-router-dom";
 
-import { database, app } from "../../App";
+import { database, app } from "../../AppRouting";
 
 export interface DatabaseRecord {
 	artist: string;

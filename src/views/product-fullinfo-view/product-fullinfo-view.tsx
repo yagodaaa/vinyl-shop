@@ -3,7 +3,7 @@ import { DatabaseRecord } from "../../components/record-miniature/record-miniatu
 import { DocumentData, QuerySnapshot, collection, onSnapshot } from "firebase/firestore";
 import React from "react";
 
-import { database } from "../../App";
+import { database } from "../../AppRouting";
 
 export interface SingleRecordIdProps {
     id: string
